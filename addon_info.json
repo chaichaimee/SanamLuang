@@ -1,10 +1,10 @@
 ﻿{
   "addon_name": "SanamLuang",
   "addon_description": "Automatically fixes Thai typing and OCR errors to prevent incorrect synthesizer pronunciation",
-  "addon_version": "2025.12",
+  "addon_version": "2026.1",
   "addon_author": "chaichaimee",
   "addon_url": "https://github.com/chaichaimee/SanamLuang",
-  "addon_download_url": "https://github.com/chaichaimee/SanamLuang/releases/download/v2025.12/SanamLuang-v2025.12.nvda-addon",
+  "addon_download_url": "https://github.com/chaichaimee/SanamLuang/releases/download/v2026.1/SanamLuang-v2026.1.nvda-addon",
   "addon_min_nvda_version": "2022.4"
 }
 
