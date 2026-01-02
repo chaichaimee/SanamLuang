@@ -1,84 +1,71 @@
-# SanamLuang - ตัวแก้ไขข้อความไทยอัตโนมัติสำหรับ NVDA
+# SanamLuang
 
-**ผู้พัฒนา:** chai chaimee  
-**GitHub:** https://github.com/chaichaimee/SanamLuang
+<p align="center">
+  <img src="https://www.nvaccess.org/files/nvda/documentation/userGuide/images/nvda.ico" alt="NVDA Logo" width="120">
+  <br><br>
+  <strong>SanamLuang</strong><br>
+  <em>An NVDA add-on to correct common Thai text reading errors</em>
+</p>
 
-## ภาพรวม
+<p align="center">
+  <strong>Author:</strong> Chai Chaimee<br>
+  <strong>Repository:</strong> <a href="https://github.com/chaichaimee/SanamLuang">https://github.com/chaichaimee/SanamLuang</a>
+</p>
 
-**SanamLuang** เป็น add-on สำหรับโปรแกรมอ่านหน้าจอ NVDA ที่ช่วยแก้ไขข้อผิดพลาดของข้อความภาษาไทยที่เกิดขึ้นบ่อย ๆ โดยอัตโนมัติ เช่น  
-- การพิมพ์เร็วแล้วตัวอักษรซ้อนกันผิดตำแหน่ง  
-- ระบบ auto-correct หรือการสแกน OCR ทำให้ตัวสะกดเพี้ยน  
-- วรรณยุกต์หรือสระลอยไปอยู่ตำแหน่งที่ไม่ถูกต้อง  
+---
 
-แอดออนนี้จะแก้ไขข้อความให้ถูกต้องก่อนที่ NVDA จะอ่านออกเสียง ทำให้การอ่านหน้าจอเป็นธรรมชาติและถูกต้องมากยิ่งขึ้น
+## Description
 
-## ทำไมต้องใช้ SanamLuang?
+**SanamLuang** is an NVDA add-on designed to fix frequent Thai text reading errors caused by:
 
-ตัวอย่างข้อผิดพลาดที่พบบ่อยในชีวิตประจำวัน:
+- Incorrect spelling commonly used by younger generations
+- Voice input (speech-to-text) mistakes
+- Auto-correction / word suggestion errors
+- Wrong positioning of vowel signs, tone marks, and other diacritics from OCR scanning
 
-| พิมพ์ผิด          | ถูกต้อง       | ตัวอย่างก่อนแก้             | หลังแก้                  |
-|-------------------|--------------|-----------------------------|--------------------------|
-| ํา                | ำ           | เขํา                         | เขา                      |
-| ํ่า / ํ้าน้ำ      | ่ำ / น้ำ    | นํ่า, ํ้าน้ำ                | น้ำ                      |
-| เเ                | แ           | นักเเเสดง                    | นักแสดง                  |
-| ำ่ / ำ้           | ่ำ / ้ำ     | นำ่, นำ้                     | น้ำ                      |
+These issues often cause speech synthesizers to pronounce Thai text incorrectly.
 
-ข้อผิดพลาดเหล่านี้เกิดขึ้นบ่อยมากโดยเฉพาะเมื่อใช้คีย์บอร์ดไทยหรือพิมพ์เร็ว SanamLuang จะช่วยแก้ให้โดยอัตโนมัติ
+## Hotkeys
 
-## คุณสมบัติหลัก
+- **NVDA+Shift+F4** → Open SanamLuang settings window  
+- **NVDA+Shift+F4** (with text selected or entire document highlighted) → Automatically correct all errors in the selected text  
+- **Double-press NVDA+Shift+F4 quickly** → Toggle error reading mode on/off
 
-| คำสั่ง                        | การใช้งาน                                                                 |
-|-------------------------------|--------------------------------------------------------------------------|
-| **NVDA+Shift+F4 (แตะสองครั้งเร็ว)** | เปิด/ปิด การแก้ไขเสียงอัตโนมัติ (Toggle On/Off)                           |
-| **NVDA+Shift+F4 (แตะครั้งเดียว + มีข้อความเลือก)** | แทนที่ข้อความที่เลือกด้วยข้อความที่แก้ไขแล้ว (Replace selected text)      |
-| **NVDA+Shift+F4 (แตะครั้งเดียว + ไม่มีข้อความเลือก)** | เปิดหน้าต่างตั้งค่า (Settings)                                           |
+## How It Works
 
-### รายการแก้ไขเริ่มต้น (Default Corrections)
+After installation, SanamLuang works immediately by detecting and reading misplaced/incorrect vowel signs and tone marks based on its built-in initial dictionary.
 
-| ผิด               | ถูก          | ตัวอย่าง                              |
-|-------------------|--------------|--------------------------------------|
-| ํา                | ำ           | ขํา  ขำ                           |
-| ํ่า               | ่ำ          | นํ่า  น้ำ                           |
-| ํ้า               | ้ำ          | นํ้า  น้ำ                           |
-| ำ่                | ่ำ          | นำ่  น้ำ                            |
-| ำ้                | ้ำ          | นำ้  น้ำ                            |
-| เเ                | แ           | นักเเเสดง  นักแสดง                  |
-| และอื่น ๆ อีกมากมาย… |              |                                      |
+You can add your own custom misspelled or incorrectly positioned words via the settings window (opened with **NVDA+Shift+F4**), similar to NVDA's built-in speech dictionary.
 
-## วิธีใช้งาน
+To disable SanamLuang's error reading, double-press **NVDA+Shift+F4** quickly. You will hear “SanamLuang off” and the reading will revert to standard NVDA behavior.
 
-### ใช้งานพื้นฐาน
-1. **เปิด/ปิดการแก้ไขเสียงอัตโนมัติ**  
-    แตะ `NVDA+Shift+F4` สองครั้งเร็ว ๆ
-   - เมื่อเปิด (ON): ข้อความที่อ่านจะถูกแก้ไขอัตโนมัติ  
-   - เมื่อปิด (OFF): อ่านตามข้อความต้นฉบับเป๊ะ ๆ
+### For OCR-processed documents
 
-2. **แก้ไขข้อความที่เลือก**  
-    เลือกข้อความ  แตะ `NVDA+Shift+F4` ครั้งเดียว  
-    ข้อความในเอกสารจะถูกแทนที่ด้วยเวอร์ชันที่แก้ไขแล้ว (เปลี่ยนถาวร)
+When working with scanned/OCR documents (which often contain misplaced vowels/tone marks such as ํา ํ่า ํ้า เเ etc.), simply:
 
-3. **เปิดหน้าต่างตั้งค่า**  
-    ไม่ต้องเลือกข้อความ  แตะ `NVDA+Shift+F4` ครั้งเดียว
+1. Select all text (Ctrl+A)
+2. Press **NVDA+Shift+F4**
 
-### เพิ่ม/แก้ไขกฎการแก้ไขเอง
-1. เปิดหน้าต่างตั้งค่า  
-2. กดปุ่ม **เพิ่ม**  
-3. ใส่  
-   - **Pattern**  ข้อความที่ผิดที่ต้องการหา  
-   - **Replacement**  ข้อความที่ถูกต้อง (เว้นว่าง = ลบข้อความนั้นออก)  
-   - **ใช้ Regex**  ติ๊กถ้าต้องการใช้ regular expression (สำหรับผู้ใช้ขั้นสูง)
-4. กด OK
+SanamLuang will automatically scan and correct all defined vowel/tone mark positioning errors throughout the document.  
+Only entries present in SanamLuang's dictionary will be corrected — you can expand the dictionary yourself.
 
-คุณยังสามารถ **แก้ไข**, **ลบ**, หรือ **กด Reset to defaults** เพื่อคืนค่าพื้นฐานได้ทุกเมื่อ
+> **Note:** This saves you from manually fixing each occurrence one by one.
 
-## ข้อสำคัญที่ต้องรู้
+## Additional Benefits
 
-- **การแก้ไขเสียง vs การแก้ไขข้อความจริง**  
-  เมื่อเปิด SanamLuang  แก้ไขเฉพาะเสียงที่ NVDA อ่านออกมา (ข้อความในไฟล์ยังคงเดิม)  
-  เมื่อใช้ฟังก์ชันแทนที่ข้อความ  ข้อความในเอกสารจะถูกเปลี่ยนจริง (ถาวร)
+Besides regular document correction, SanamLuang also helps normalize reading of intentionally altered Thai words commonly found on social media (to evade content filtering), such as:
 
-- การตั้งค่าทั้งหมดจะถูกบันทึกอัตโนมัติ และคงอยู่แม้ปิด-เปิด NVDA ใหม่
+- เงิu → เงิน  
+- เvมร / เขมs → เขมร  
+- and many other evasion-style spellings
 
-## สิทธิ์การใช้งาน
+This greatly improves speech synthesizer accuracy when dealing with increasingly distorted and creative forms of written Thai across online platforms.
 
-GNU General Public License version 2 (GPLv2)
+---
+
+## Correction Dictionary Format (JSONL)
+
+SanamLuang uses a simple **JSONL** file format for its correction dictionary:
+
+```json
+{"word": [["corrected form"]]}
