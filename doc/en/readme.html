@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SanamLuang NVDA Add-on</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1, h2, h3 {
+    text-align: center;
+}
+b {
+    font-weight: bold;
+}
+.section {
+    margin-bottom: 30px;
+}
+.nvda-logo {
+    display: block;
+    margin: 0 auto 20px;
+    width: 120px;
+    height: auto;
+}
+.hotkey {
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 0 4px 4px 0;
+}
+.tap-explanation {
+    background: #e8f4fc;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+.feature-item {
+    margin: 15px 0;
+    padding-left: 10px;
+}
+.note {
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 12px;
+    margin: 15px 0;
+    border-radius: 0 4px 4px 0;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="section">
+    <img src="https://www.nvaccess.org/files/nvda/documentation/userGuide/images/nvda.ico" alt="NVDA Logo" class="nvda-logo">
+    <h1>SanamLuang</h1>
+    <br>
+    <p style="text-align: center;">An NVDA add-on to help correct common Thai text reading errors</p>
+</div>
+
+<br>
+
+<div class="section">
+    <p style="text-align: center;"><b>Author:</b> Chai Chaimee</p>
+    <p style="text-align: center;"><b>Repository:</b> <a href="https://github.com/chaichaimee/SanamLuang">https://github.com/chaichaimee/SanamLuang</a></p>
+</div>
+
+<div class="section">
+    <h2>Description</h2>
+    <p><strong>SanamLuang</strong> is an add-on for the NVDA screen reader designed to address frequent errors in reading Thai text. These errors often occur due to:</p>
+    <ul>
+        <li>Incorrect Thai spelling commonly used by younger generations</li>
+        <li>Voice input mistakes</li>
+        <li>Auto-correction/word suggestion errors</li>
+        <li>Misplaced vowel signs, tone marks, and other diacritics from OCR scanning</li>
+    </ul>
+    <p class="note">Such mistakes frequently cause synthesizers to pronounce Thai text incorrectly.</p>
+</div>
+
+<div class="section">
+    <h2>Hotkeys</h2>
+    
+    <div class="hotkey">
+        <strong>NVDA+Shift+F4</strong> → Open the SanamLuang settings window
+    </div>
+    
+    <div class="hotkey">
+        <strong>NVDA+Shift+F4</strong> (when text is selected or the entire document is highlighted) → Automatically correct all spelling/vowel/tone mark errors in the selected text
+    </div>
+    
+    <div class="hotkey">
+        <strong>Double-press NVDA+Shift+F4 quickly</strong> → Toggle SanamLuang's error reading mode on/off
+    </div>
+</div>
+
+<div class="section">
+    <h2>How it works</h2>
+    
+    <p>Once installed, SanamLuang starts working immediately. It reads out misplaced or incorrect vowel signs and tone marks according to its built-in initial dictionary.</p>
+    
+    <p>Users can add their own misspelled/incorrectly positioned words through the settings window (opened with <strong>NVDA+Shift+F4</strong>), functioning similarly to NVDA's built-in speech dictionary.</p>
+    
+    <p>To completely disable SanamLuang's reading of errors, quickly double-press <strong>NVDA+Shift+F4</strong>. You will hear "SanamLuang off" and the reading will return to default NVDA behavior.</p>
+
+    <h3>For OCR-processed documents</h3>
+    <p>When working with scanned documents (OCR results), users can easily fix common vowel/tone mark positioning errors such as:</p>
+    <p style="text-align:center; font-family: Tahoma, sans-serif; font-size: 1.2em; margin: 1em 0;">
+        ํา &nbsp; ํ่า &nbsp; ํ้า &nbsp; เเ &nbsp; etc.
+    </p>
+    
+    <p>Simply select all text (Ctrl+A), then press <strong>NVDA+Shift+F4</strong>. SanamLuang will automatically scan and correct all specified vowel/tone mark positioning errors throughout the document (only for entries defined in its dictionary — which you can expand yourself).</p>
+    
+    <p class="note">This saves users from having to manually correct each occurrence one by one.</p>
+</div>
+
+<div class="section">
+    <h2>Additional benefits</h2>
+    <p>Besides correcting documents, SanamLuang also helps normalize spelling and pronunciation for Thai text commonly found on social media, where users intentionally alter words to avoid content filtering or blocking, for example:</p>
+    
+    <ul>
+        <li>เงิu → เงิน (money)</li>
+        <li>เvมร → เขมร (Khmer)</li>
+        <li>เขมs → เขมร</li>
+        <li>and many other variations</li>
+    </ul>
+    
+    <p>This greatly improves the reading accuracy of speech synthesizers when encountering the increasingly complex and distorted forms of written Thai found across various online platforms and communication channels.</p>
+</div>
+
+</div>
+</body>
+</html>

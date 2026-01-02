@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>SanamLuang - ส่วนเสริม NVDA</title>
+<style>
+body {
+    font-family: Arial, "TH Sarabun New", "Tahoma", sans-serif;
+    line-height: 1.7;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #111;
+}
+.container {
+    max-width: 850px;
+    margin: auto;
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.12);
+}
+h1, h2, h3 {
+    text-align: center;
+    color: #1a1a1a;
+}
+b {
+    font-weight: bold;
+}
+.section {
+    margin-bottom: 35px;
+}
+.nvda-logo {
+    display: block;
+    margin: 0 auto 20px;
+    width: 120px;
+    height: auto;
+}
+.hotkey {
+    background: #f8f9fa;
+    border-left: 5px solid #2c7be5;
+    padding: 16px 20px;
+    margin: 18px 0;
+    border-radius: 0 6px 6px 0;
+    font-family: "Courier New", monospace;
+}
+.note {
+    background: #fff8e1;
+    border-left: 5px solid #ffb300;
+    padding: 14px 18px;
+    margin: 18px 0;
+    border-radius: 0 6px 6px 0;
+}
+ul {
+    padding-left: 1.8em;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="section">
+    <img src="https://www.nvaccess.org/files/nvda/documentation/userGuide/images/nvda.ico" alt="โลโก้ NVDA" class="nvda-logo">
+    <h1>SanamLuang</h1>
+    <p style="text-align: center; font-size: 1.2em; margin-top: 0.4em; color: #444;">
+        ส่วนเสริมสำหรับโปรแกรมอ่านหน้าจอ NVDA<br>ช่วยแก้ไขข้อผิดพลาดการอ่านข้อความภาษาไทยที่พบบ่อย
+    </p>
+</div>
+
+<div class="section" style="text-align: center; margin-top: 1.5em;">
+    <p><b>ผู้พัฒนา :</b> ชัย ไชยมี (Chai Chaimee)</p>
+    <p><b>ที่เก็บโครงการ :</b> 
+        <a href="https://github.com/chaichaimee/SanamLuang" style="color: #2c7be5; text-decoration: none;">
+            https://github.com/chaichaimee/SanamLuang
+        </a>
+    </p>
+</div>
+
+<div class="section">
+    <h2>คำอธิบาย</h2>
+    <p><strong>สนามหลวง</strong> เป็นส่วนเสริม (add-on) สำหรับโปรแกรมอ่านหน้าจอ NVDA ที่ช่วยแก้ไขปัญหาการอ่านข้อความภาษาไทยผิดพลาด ซึ่งเกิดขึ้นบ่อยครั้งจากหลายสาเหตุ ได้แก่</p>
+    <ul>
+        <li>การพิมพ์ภาษาไทยไม่ถูกต้องตามหลักภาษา (พบมากในคนรุ่นใหม่)</li>
+        <li>การพิมพ์ด้วยเสียง (speech-to-text) ที่ผิดพลาด</li>
+        <li>การเลือกคำอัตโนมัติ (auto-correct) ที่ทำให้สะกดคลาดเคลื่อน</li>
+        <li>ผลการสแกนด้วย OCR ที่วางตำแหน่งสระ วรรณยุกต์ และเครื่องหมายต่าง ๆ ผิดตำแหน่ง</li>
+    </ul>
+    <div class="note">
+        ปัญหาเหล่านี้ทำให้เครื่องสังเคราะห์เสียง (synthesizer) อ่านภาษาไทยผิดเกือบทั้งหมด
+    </div>
+</div>
+
+<div class="section">
+    <h2>ปุ่มลัด (Hotkeys)</h2>
+    
+    <div class="hotkey">
+        <strong>NVDA+Shift+F4</strong> → เปิดหน้าต่างตั้งค่า SanamLuang
+    </div>
+    
+    <div class="hotkey">
+        <strong>NVDA+Shift+F4</strong> (ขณะที่เลือกข้อความหรือคลุมดำทั้งเอกสาร) → แก้ไขข้อความที่ผิดทั้งหมดให้ถูกต้องตามอัตโนมัติ
+    </div>
+    
+    <div class="hotkey">
+        <strong>กด NVDA+Shift+F4 เร็ว ๆ 2 ครั้ง</strong> → เปิด/ปิด โหมดการอ่านคำผิดของสนามหลวง
+    </div>
+</div>
+
+<div class="section">
+    <h2>การทำงานของส่วนเสริม</h2>
+    
+    <p>เมื่อติดตั้งส่วนเสริม <strong>SanamLuang</strong> แล้ว จะเริ่มทำงานทันที โดยจะอ่านสระและวรรณยุกต์ที่อยู่ตำแหน่งผิดตามที่กำหนดไว้ในพจนานุกรมเริ่มต้น</p>
+    
+    <p>ผู้ใช้สามารถเพิ่มคำที่สะกดผิดหรือตำแหน่งสระ/วรรณยุกต์ที่ต้องการแก้ไขได้เอง ผ่านหน้าต่างตั้งค่า (กด <strong>NVDA+Shift+F4</strong>) ซึ่งทำงานคล้ายพจนานุกรมการออกเสียงของ NVDA</p>
+    
+    <p>หากต้องการปิดการทำงานของสนามหลวงชั่วคราว ให้กด <strong>NVDA+Shift+F4</strong> เร็ว ๆ 2 ครั้ง จะได้ยินเสียงแจ้งว่า “สนามหลวง ปิด” และการอ่านจะกลับไปเป็นแบบมาตรฐานของ NVDA</p>
+
+    <h3>กรณีเอกสารที่ผ่านการสแกน OCR</h3>
+    <p>สำหรับเอกสารที่ได้จากการสแกน (OCR) ซึ่งมักมีปัญหาสระ วรรณยุกต์ ผิดตำแหน่ง เช่น</p>
+    
+    <p style="text-align:center; font-size: 1.8em; font-family: Tahoma, sans-serif; margin: 1.2em 0; letter-spacing: 0.5em;">
+        ํา &nbsp;&nbsp; ํ่า &nbsp;&nbsp; ํ้า &nbsp;&nbsp; เเ &nbsp;&nbsp; ฯลฯ
+    </p>
+    
+    <p>เพียงเลือกข้อความทั้งหมด (Ctrl+A) แล้วกด <strong>NVDA+Shift+F4</strong> ส่วนเสริมจะทำการตรวจสอบและแก้ไขตำแหน่งสระ วรรณยุกต์ที่ผิดให้ถูกต้องทั้งเอกสาร โดยอัตโนมัติ (เฉพาะรายการที่กำหนดไว้ในพจนานุกรมของสนามหลวงเท่านั้น – ผู้ใช้สามารถเพิ่มเติมได้เอง)</p>
+    
+    <div class="note">
+        ช่วยประหยัดเวลา ไม่ต้องแก้ทีละตำแหน่งด้วยตัวเอง
+    </div>
+</div>
+
+<div class="section">
+    <h2>ประโยชน์เพิ่มเติม</h2>
+    <p>นอกจากการแก้ไขเอกสารทั่วไปแล้ว สนามหลวงยังช่วยปรับการอ่านข้อความภาษาไทยแบบที่นิยมใช้ในโซเชียลมีเดีย ซึ่งมักมีการสะกดเปลี่ยนรูปเพื่อหลีกเลี่ยงการตรวจจับ เช่น</p>
+    
+    <ul>
+        <li>เงิu → เงิน</li>
+        <li>เvมร / เขมs → เขมร</li>
+        <li>และการสะกดหลบอื่น ๆ อีกมากมาย</li>
+    </ul>
+    
+    <p>ทำให้เครื่องสังเคราะห์เสียงสามารถอ่านข้อความเหล่านี้ได้ถูกต้องมากขึ้น แม้จะอยู่ในสภาพ “สนามรบทางภาษาไทย” ที่มีความซับซ้อนและรุนแรงขึ้นเรื่อย ๆ จากการสื่อสารออนไลน์ในปัจจุบัน</p>
+</div>
+
+</div>
+</body>
+</html>
